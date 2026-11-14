@@ -1,4 +1,12 @@
-// 치지직 스트리머 라쿠너스(a4a172706bed9152f18df8796bde093b) 실제 인기 클립 데이터
+// 치지직 스트리머 라쿠너스(a4a172706bed9152f18df8796bde093b) 실제 인기 클립 데이터 (자동 갱신됨)
+window.RCNS_CHANNEL_META = {
+    "channelId":  "a4a172706bed9152f18df8796bde093b",
+    "channelName":  "라쿠너스",
+    "channelImageUrl":  "https://nng-phinf.pstatic.net/MjAyNDAzMDFfMjM4/MDAxNzA5Mjc0OTUxNjMx.Sv1OhIE0fHTOSUcqZZJLKPjmmdkX7vQSKDulxdbrleIg.1Za1wI9yLj9dV6tgLLX3DR9BWOawt_Hd5zjaCglFu34g.PNG/FszNyVAaAAAoqgi_%EB%B3%B5%EC%82%AC%EB%B3%B8.png",
+    "followerCount":  496,
+    "openLive":  false,
+    "updatedAt":  "2026-11-15 00:24:39"
+};
 window.RCNS_CLIPS = [
     {
         "clipUID":  "Y9aJrrMCzS",
@@ -10,7 +18,7 @@ window.RCNS_CLIPS = [
         "duration":  18,
         "adult":  false,
         "createdDate":  "2024-05-10 21:58:26",
-        "readCount":  360
+        "readCount":  364
     },
     {
         "clipUID":  "zoYUIcvMzA",
@@ -22,7 +30,7 @@ window.RCNS_CLIPS = [
         "duration":  60,
         "adult":  false,
         "createdDate":  "2024-06-06 16:58:24",
-        "readCount":  230
+        "readCount":  233
     },
     {
         "clipUID":  "kjVBMHM077",
@@ -46,7 +54,7 @@ window.RCNS_CLIPS = [
         "duration":  31,
         "adult":  true,
         "createdDate":  "2024-08-01 22:46:06",
-        "readCount":  158
+        "readCount":  159
     },
     {
         "clipUID":  "059bFybXd4",
@@ -58,7 +66,7 @@ window.RCNS_CLIPS = [
         "duration":  19,
         "adult":  false,
         "createdDate":  "2025-03-15 00:18:31",
-        "readCount":  144
+        "readCount":  147
     },
     {
         "clipUID":  "z7ajRR5CNc",
@@ -70,7 +78,7 @@ window.RCNS_CLIPS = [
         "duration":  13,
         "adult":  false,
         "createdDate":  "2025-03-25 23:35:10",
-        "readCount":  140
+        "readCount":  143
     },
     {
         "clipUID":  "5CR9v2xxCY",
@@ -82,7 +90,7 @@ window.RCNS_CLIPS = [
         "duration":  60,
         "adult":  false,
         "createdDate":  "2024-06-06 17:03:56",
-        "readCount":  137
+        "readCount":  141
     },
     {
         "clipUID":  "04YQgI6OJc",
@@ -94,7 +102,7 @@ window.RCNS_CLIPS = [
         "duration":  11,
         "adult":  false,
         "createdDate":  "2025-08-15 17:56:30",
-        "readCount":  118
+        "readCount":  119
     },
     {
         "clipUID":  "UPPUZKnJqZ",
@@ -106,7 +114,7 @@ window.RCNS_CLIPS = [
         "duration":  10,
         "adult":  false,
         "createdDate":  "2025-02-16 20:36:34",
-        "readCount":  113
+        "readCount":  114
     },
     {
         "clipUID":  "MX5PweKBhG",
@@ -118,7 +126,7 @@ window.RCNS_CLIPS = [
         "duration":  60,
         "adult":  false,
         "createdDate":  "2024-05-10 21:54:49",
-        "readCount":  108
+        "readCount":  109
     },
     {
         "clipUID":  "aKVnU5AEoU",
@@ -130,7 +138,19 @@ window.RCNS_CLIPS = [
         "duration":  11,
         "adult":  false,
         "createdDate":  "2024-11-11 19:32:54",
-        "readCount":  103
+        "readCount":  104
+    },
+    {
+        "clipUID":  "0Q1dYR8BsB",
+        "videoId":  "CC556B7C87ECC39827CF4545DFA21E21B640",
+        "clipTitle":  "아저씨의 자극적인 잔소리",
+        "thumbnailImageUrl":  null,
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  60,
+        "adult":  true,
+        "createdDate":  "2024-10-22 22:32:55",
+        "readCount":  98
     },
     {
         "clipUID":  "ax8ypPwRfY",
@@ -145,18 +165,6 @@ window.RCNS_CLIPS = [
         "readCount":  96
     },
     {
-        "clipUID":  "0Q1dYR8BsB",
-        "videoId":  "CC556B7C87ECC39827CF4545DFA21E21B640",
-        "clipTitle":  "아저씨의 자극적인 잔소리",
-        "thumbnailImageUrl":  null,
-        "categoryType":  "ETC",
-        "clipCategory":  "talk",
-        "duration":  60,
-        "adult":  true,
-        "createdDate":  "2024-10-22 22:32:55",
-        "readCount":  95
-    },
-    {
         "clipUID":  "n7Zi8KXn0h",
         "videoId":  "600CAA837AD1071645AC91C750D312A9958E",
         "clipTitle":  "???: 라만님 요즘 아이돌 이미지가 있나..?",
@@ -166,7 +174,7 @@ window.RCNS_CLIPS = [
         "duration":  10,
         "adult":  false,
         "createdDate":  "2024-05-13 00:07:17",
-        "readCount":  90
+        "readCount":  93
     },
     {
         "clipUID":  "g7mwy9VdcD",
@@ -178,7 +186,7 @@ window.RCNS_CLIPS = [
         "duration":  120,
         "adult":  false,
         "createdDate":  "2026-01-28 22:28:12",
-        "readCount":  81
+        "readCount":  83
     },
     {
         "clipUID":  "mxOgds7TbH",
@@ -190,7 +198,7 @@ window.RCNS_CLIPS = [
         "duration":  41,
         "adult":  false,
         "createdDate":  "2024-10-17 20:41:12",
-        "readCount":  74
+        "readCount":  75
     },
     {
         "clipUID":  "VTnpnMqhqa",
@@ -202,7 +210,31 @@ window.RCNS_CLIPS = [
         "duration":  13,
         "adult":  false,
         "createdDate":  "2024-10-15 23:03:43",
-        "readCount":  72
+        "readCount":  73
+    },
+    {
+        "clipUID":  "uFOswVWXmC",
+        "videoId":  "C23FA2CC58CDDBB5EE0DA7C84BA6D29E0243",
+        "clipTitle":  "그랜절 킥",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20260128_181/1769609026911vxUWL_JPEG/uNJSahgOC7_03.jpg",
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  18,
+        "adult":  false,
+        "createdDate":  "2026-01-28 23:03:31",
+        "readCount":  69
+    },
+    {
+        "clipUID":  "7vVtGEOrcp",
+        "videoId":  "86CCF9E87AD5A325AA91141B435665847E88",
+        "clipTitle":  "감사감사",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20250815_89/1755245044651mQdPs_JPEG/NByhrutKiw_03.jpg",
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  10,
+        "adult":  false,
+        "createdDate":  "2025-08-15 17:03:52",
+        "readCount":  66
     },
     {
         "clipUID":  "8wKc4h9TIa",
@@ -217,30 +249,6 @@ window.RCNS_CLIPS = [
         "readCount":  66
     },
     {
-        "clipUID":  "uFOswVWXmC",
-        "videoId":  "C23FA2CC58CDDBB5EE0DA7C84BA6D29E0243",
-        "clipTitle":  "그랜절 킥",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20260128_181/1769609026911vxUWL_JPEG/uNJSahgOC7_03.jpg",
-        "categoryType":  "ETC",
-        "clipCategory":  "talk",
-        "duration":  18,
-        "adult":  false,
-        "createdDate":  "2026-01-28 23:03:31",
-        "readCount":  65
-    },
-    {
-        "clipUID":  "7vVtGEOrcp",
-        "videoId":  "86CCF9E87AD5A325AA91141B435665847E88",
-        "clipTitle":  "감사감사",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20250815_89/1755245044651mQdPs_JPEG/NByhrutKiw_03.jpg",
-        "categoryType":  "ETC",
-        "clipCategory":  "talk",
-        "duration":  10,
-        "adult":  false,
-        "createdDate":  "2025-08-15 17:03:52",
-        "readCount":  63
-    },
-    {
         "clipUID":  "wOFvUpPnjk",
         "videoId":  "0B9399F930D29B2970D4F50A90352DF3E3D1",
         "clipTitle":  "앙탈부리는 아저씨",
@@ -250,7 +258,7 @@ window.RCNS_CLIPS = [
         "duration":  41,
         "adult":  false,
         "createdDate":  "2025-02-10 21:47:19",
-        "readCount":  63
+        "readCount":  64
     },
     {
         "clipUID":  "kmqxvYlA9q",
@@ -262,7 +270,7 @@ window.RCNS_CLIPS = [
         "duration":  28,
         "adult":  true,
         "createdDate":  "2025-06-12 07:12:19",
-        "readCount":  62
+        "readCount":  63
     },
     {
         "clipUID":  "utHILUTvSK",
@@ -274,19 +282,7 @@ window.RCNS_CLIPS = [
         "duration":  60,
         "adult":  false,
         "createdDate":  "2024-05-13 00:15:01",
-        "readCount":  60
-    },
-    {
-        "clipUID":  "lrBVRVR3fc",
-        "videoId":  "41B54FC9A4E407BD5D691D496879EB567A69",
-        "clipTitle":  "라쿠너스의 도련님 재우기",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20250815_226/1755245879347UKDKi_JPEG/e2yUSt3TAD_03.jpg",
-        "categoryType":  "ETC",
-        "clipCategory":  "talk",
-        "duration":  60,
-        "adult":  false,
-        "createdDate":  "2025-08-15 17:17:20",
-        "readCount":  57
+        "readCount":  61
     },
     {
         "clipUID":  "6Koh5kUlqr",
@@ -298,31 +294,7 @@ window.RCNS_CLIPS = [
         "duration":  25,
         "adult":  false,
         "createdDate":  "2025-08-06 22:22:54",
-        "readCount":  57
-    },
-    {
-        "clipUID":  "bHh6kUnsas",
-        "videoId":  "8D2EF102AE0B6C92A1286B32BD187F6DD25F",
-        "clipTitle":  "라만님 방... 메모...",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20241001_231/17277757722337bTVf_JPEG/qykJ6KwNOV_03.jpg",
-        "categoryType":  "ETC",
-        "clipCategory":  "talk",
-        "duration":  15,
-        "adult":  false,
-        "createdDate":  "2024-10-01 18:42:40",
-        "readCount":  57
-    },
-    {
-        "clipUID":  "TJf9AgcURJ",
-        "videoId":  "FBEE9C8FD34CCCA276227C1783C0AD84EF55",
-        "clipTitle":  "그 대사",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20240820_162/1724165461362WkinM_JPEG/NPBGgDx9uy_03.jpg",
-        "categoryType":  "ETC",
-        "clipCategory":  "art",
-        "duration":  35,
-        "adult":  false,
-        "createdDate":  "2024-08-20 23:50:45",
-        "readCount":  57
+        "readCount":  60
     },
     {
         "clipUID":  "fCMLR7RZYs",
@@ -334,7 +306,67 @@ window.RCNS_CLIPS = [
         "duration":  10,
         "adult":  true,
         "createdDate":  "2024-10-22 21:47:04",
-        "readCount":  56
+        "readCount":  60
+    },
+    {
+        "clipUID":  "bHh6kUnsas",
+        "videoId":  "8D2EF102AE0B6C92A1286B32BD187F6DD25F",
+        "clipTitle":  "라만님 방... 메모...",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20241001_231/17277757722337bTVf_JPEG/qykJ6KwNOV_03.jpg",
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  15,
+        "adult":  false,
+        "createdDate":  "2024-10-01 18:42:40",
+        "readCount":  59
+    },
+    {
+        "clipUID":  "lrBVRVR3fc",
+        "videoId":  "41B54FC9A4E407BD5D691D496879EB567A69",
+        "clipTitle":  "라쿠너스의 도련님 재우기",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20250815_226/1755245879347UKDKi_JPEG/e2yUSt3TAD_03.jpg",
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  60,
+        "adult":  false,
+        "createdDate":  "2025-08-15 17:17:20",
+        "readCount":  58
+    },
+    {
+        "clipUID":  "TJf9AgcURJ",
+        "videoId":  "FBEE9C8FD34CCCA276227C1783C0AD84EF55",
+        "clipTitle":  "그 대사",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20240820_162/1724165461362WkinM_JPEG/NPBGgDx9uy_03.jpg",
+        "categoryType":  "ETC",
+        "clipCategory":  "art",
+        "duration":  35,
+        "adult":  false,
+        "createdDate":  "2024-08-20 23:50:45",
+        "readCount":  58
+    },
+    {
+        "clipUID":  "u14dngYEIH",
+        "videoId":  "2DB9BADB4BCFD582FEB86B7C7C337B603589",
+        "clipTitle":  "오랫만에 만난 친구와의 만남은 최악이였다",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20260408_29/17756581630254I8gN_JPEG/XzveSbPOE6_03.jpg",
+        "categoryType":  null,
+        "clipCategory":  null,
+        "duration":  25,
+        "adult":  false,
+        "createdDate":  "2026-04-08 23:22:29",
+        "readCount":  54
+    },
+    {
+        "clipUID":  "S8nv52MvHe",
+        "videoId":  "090D79AEF6A8138FE684BAE1EB768B459AC4",
+        "clipTitle":  "이런 나이먹은 아저씨가 뭐가 좋다고…….",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20250216_246/17397058537258ozwk_JPEG/Yyb362LxXf_03.jpg",
+        "categoryType":  "ETC",
+        "clipCategory":  "art",
+        "duration":  24,
+        "adult":  false,
+        "createdDate":  "2025-02-16 20:37:20",
+        "readCount":  54
     },
     {
         "clipUID":  "amsuuWaP3d",
@@ -349,30 +381,6 @@ window.RCNS_CLIPS = [
         "readCount":  54
     },
     {
-        "clipUID":  "u14dngYEIH",
-        "videoId":  "2DB9BADB4BCFD582FEB86B7C7C337B603589",
-        "clipTitle":  "오랫만에 만난 친구와의 만남은 최악이였다",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20260408_29/17756581630254I8gN_JPEG/XzveSbPOE6_03.jpg",
-        "categoryType":  null,
-        "clipCategory":  null,
-        "duration":  25,
-        "adult":  false,
-        "createdDate":  "2026-04-08 23:22:29",
-        "readCount":  52
-    },
-    {
-        "clipUID":  "S8nv52MvHe",
-        "videoId":  "090D79AEF6A8138FE684BAE1EB768B459AC4",
-        "clipTitle":  "이런 나이먹은 아저씨가 뭐가 좋다고…….",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20250216_246/17397058537258ozwk_JPEG/Yyb362LxXf_03.jpg",
-        "categoryType":  "ETC",
-        "clipCategory":  "art",
-        "duration":  24,
-        "adult":  false,
-        "createdDate":  "2025-02-16 20:37:20",
-        "readCount":  52
-    },
-    {
         "clipUID":  "ck5ii6dAGH",
         "videoId":  "917E3571D21012CD7956D3F3BBB2B5EE3FEC",
         "clipTitle":  "앙~",
@@ -382,7 +390,7 @@ window.RCNS_CLIPS = [
         "duration":  26,
         "adult":  false,
         "createdDate":  "2024-06-04 22:12:56",
-        "readCount":  51
+        "readCount":  53
     },
     {
         "clipUID":  "ePqinf4eqD",
@@ -394,7 +402,7 @@ window.RCNS_CLIPS = [
         "duration":  38,
         "adult":  false,
         "createdDate":  "2025-08-15 17:21:48",
-        "readCount":  50
+        "readCount":  52
     },
     {
         "clipUID":  "GyclhxWi00",
@@ -406,7 +414,7 @@ window.RCNS_CLIPS = [
         "duration":  50,
         "adult":  false,
         "createdDate":  "2024-11-16 23:15:46",
-        "readCount":  49
+        "readCount":  50
     },
     {
         "clipUID":  "heRSa92ICc",
@@ -418,7 +426,7 @@ window.RCNS_CLIPS = [
         "duration":  11,
         "adult":  false,
         "createdDate":  "2025-02-10 22:00:38",
-        "readCount":  45
+        "readCount":  46
     },
     {
         "clipUID":  "RrXHzq6JQ8",
@@ -430,7 +438,7 @@ window.RCNS_CLIPS = [
         "duration":  24,
         "adult":  false,
         "createdDate":  "2025-04-26 15:18:19",
-        "readCount":  43
+        "readCount":  45
     },
     {
         "clipUID":  "IhifHgy6Tc",
@@ -442,7 +450,7 @@ window.RCNS_CLIPS = [
         "duration":  29,
         "adult":  false,
         "createdDate":  "2024-06-04 21:59:31",
-        "readCount":  43
+        "readCount":  44
     },
     {
         "clipUID":  "RaxgQ22kZv",
@@ -454,7 +462,7 @@ window.RCNS_CLIPS = [
         "duration":  65,
         "adult":  false,
         "createdDate":  "2026-01-28 23:01:45",
-        "readCount":  42
+        "readCount":  43
     },
     {
         "clipUID":  "PMSvT0JgHH",
@@ -466,31 +474,7 @@ window.RCNS_CLIPS = [
         "duration":  60,
         "adult":  false,
         "createdDate":  "2025-01-25 17:57:40",
-        "readCount":  42
-    },
-    {
-        "clipUID":  "aM0W7tnp2B",
-        "videoId":  "011FE3A304DE411AD8E31AEC7FC67DCED3E8",
-        "clipTitle":  "에겐북북 반응",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20250909_34/1757402227071LQa3E_JPEG/vuB3wPru1o_03.jpg",
-        "categoryType":  "ETC",
-        "clipCategory":  "talk",
-        "duration":  60,
-        "adult":  false,
-        "createdDate":  "2025-09-09 16:16:38",
-        "readCount":  38
-    },
-    {
-        "clipUID":  "lDscq56EUd",
-        "videoId":  "CEC6807D128847A916070FA35159981E9DF7",
-        "clipTitle":  "폭력적인 귀여움",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20250815_251/1755245303512PLyg8_JPEG/Nt3BiHYGer_03.jpg",
-        "categoryType":  "ETC",
-        "clipCategory":  "talk",
-        "duration":  23,
-        "adult":  false,
-        "createdDate":  "2025-08-15 17:07:39",
-        "readCount":  38
+        "readCount":  43
     },
     {
         "clipUID":  "j4WPkFgk5E",
@@ -502,7 +486,31 @@ window.RCNS_CLIPS = [
         "duration":  18,
         "adult":  false,
         "createdDate":  "2026-04-08 22:53:15",
-        "readCount":  37
+        "readCount":  39
+    },
+    {
+        "clipUID":  "aM0W7tnp2B",
+        "videoId":  "011FE3A304DE411AD8E31AEC7FC67DCED3E8",
+        "clipTitle":  "에겐북북 반응",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20250909_34/1757402227071LQa3E_JPEG/vuB3wPru1o_03.jpg",
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  60,
+        "adult":  false,
+        "createdDate":  "2025-09-09 16:16:38",
+        "readCount":  39
+    },
+    {
+        "clipUID":  "lDscq56EUd",
+        "videoId":  "CEC6807D128847A916070FA35159981E9DF7",
+        "clipTitle":  "폭력적인 귀여움",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20250815_251/1755245303512PLyg8_JPEG/Nt3BiHYGer_03.jpg",
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  23,
+        "adult":  false,
+        "createdDate":  "2025-08-15 17:07:39",
+        "readCount":  39
     },
     {
         "clipUID":  "YsxThzLVsf",
@@ -514,7 +522,7 @@ window.RCNS_CLIPS = [
         "duration":  60,
         "adult":  false,
         "createdDate":  "2024-11-19 00:20:44",
-        "readCount":  37
+        "readCount":  38
     },
     {
         "clipUID":  "MGMg7Za9K9",
@@ -526,7 +534,7 @@ window.RCNS_CLIPS = [
         "duration":  14,
         "adult":  true,
         "createdDate":  "2024-11-04 20:03:48",
-        "readCount":  37
+        "readCount":  38
     },
     {
         "clipUID":  "Oj4hKvctHu",
@@ -538,31 +546,7 @@ window.RCNS_CLIPS = [
         "duration":  35,
         "adult":  false,
         "createdDate":  "2026-07-16 22:45:45",
-        "readCount":  36
-    },
-    {
-        "clipUID":  "56AgdWAghz",
-        "videoId":  "2CFC7DDCAB0B206138CD56C6A3282113CD28",
-        "clipTitle":  "오스카상",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20250110_7/1736446485950HkWaL_JPEG/AuMH4rIAML_03.jpg",
-        "categoryType":  "ETC",
-        "clipCategory":  "talk",
-        "duration":  60,
-        "adult":  false,
-        "createdDate":  "2025-01-10 03:13:28",
-        "readCount":  36
-    },
-    {
-        "clipUID":  "gsQlbyqac1",
-        "videoId":  "D9957AF3CEFF19F4127495AD0B35DE66BFCB",
-        "clipTitle":  "고장난 아저씨",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20260519_131/1779200719777i1U7g_JPEG/7qhrUuBVi0_03.jpg",
-        "categoryType":  "ETC",
-        "clipCategory":  "talk",
-        "duration":  46,
-        "adult":  false,
-        "createdDate":  "2026-05-19 23:24:59",
-        "readCount":  35
+        "readCount":  37
     },
     {
         "clipUID":  "gmDIYCt8Hy",
@@ -574,7 +558,43 @@ window.RCNS_CLIPS = [
         "duration":  10,
         "adult":  false,
         "createdDate":  "2026-01-29 16:35:34",
-        "readCount":  35
+        "readCount":  37
+    },
+    {
+        "clipUID":  "56AgdWAghz",
+        "videoId":  "2CFC7DDCAB0B206138CD56C6A3282113CD28",
+        "clipTitle":  "오스카상",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20250110_7/1736446485950HkWaL_JPEG/AuMH4rIAML_03.jpg",
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  60,
+        "adult":  false,
+        "createdDate":  "2025-01-10 03:13:28",
+        "readCount":  37
+    },
+    {
+        "clipUID":  "gsQlbyqac1",
+        "videoId":  "D9957AF3CEFF19F4127495AD0B35DE66BFCB",
+        "clipTitle":  "고장난 아저씨",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20260519_131/1779200719777i1U7g_JPEG/7qhrUuBVi0_03.jpg",
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  46,
+        "adult":  false,
+        "createdDate":  "2026-05-19 23:24:59",
+        "readCount":  36
+    },
+    {
+        "clipUID":  "Me27k7GDEP",
+        "videoId":  "C3DC8E53693C6F22F0DD39DD2F0076B17444",
+        "clipTitle":  "....",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20260802_218/1785679590712SunGU_JPEG/CqdrxbwKCQ_03.jpg",
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  15,
+        "adult":  false,
+        "createdDate":  "2026-08-02 23:06:11",
+        "readCount":  34
     },
     {
         "clipUID":  "Toe55ZKH4v",
@@ -586,7 +606,7 @@ window.RCNS_CLIPS = [
         "duration":  26,
         "adult":  false,
         "createdDate":  "2025-08-31 20:41:14",
-        "readCount":  32
+        "readCount":  33
     },
     {
         "clipUID":  "Zzbwg4rq3C",
@@ -598,7 +618,7 @@ window.RCNS_CLIPS = [
         "duration":  20,
         "adult":  false,
         "createdDate":  "2025-01-25 16:43:55",
-        "readCount":  32
+        "readCount":  33
     },
     {
         "clipUID":  "apWAtwrpbb",
@@ -610,7 +630,7 @@ window.RCNS_CLIPS = [
         "duration":  22,
         "adult":  false,
         "createdDate":  "2026-05-16 15:37:16",
-        "readCount":  31
+        "readCount":  32
     },
     {
         "clipUID":  "NkVfkihNlP",
@@ -622,19 +642,7 @@ window.RCNS_CLIPS = [
         "duration":  25,
         "adult":  false,
         "createdDate":  "2025-04-25 22:56:11",
-        "readCount":  31
-    },
-    {
-        "clipUID":  "MgDUZf7y8V",
-        "videoId":  "E1C9C74E6D260180F05E4AAAC45AA20D9C99",
-        "clipTitle":  "라쿠우울절 ",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20260128_98/1769610378675Y5HKU_JPEG/VSdLRMKIe0_03.jpg",
-        "categoryType":  "ETC",
-        "clipCategory":  "talk",
-        "duration":  60,
-        "adult":  false,
-        "createdDate":  "2026-01-28 23:25:53",
-        "readCount":  30
+        "readCount":  32
     },
     {
         "clipUID":  "e3rUZRhQfi",
@@ -646,7 +654,19 @@ window.RCNS_CLIPS = [
         "duration":  118,
         "adult":  false,
         "createdDate":  "2025-04-03 10:20:15",
-        "readCount":  30
+        "readCount":  32
+    },
+    {
+        "clipUID":  "MgDUZf7y8V",
+        "videoId":  "E1C9C74E6D260180F05E4AAAC45AA20D9C99",
+        "clipTitle":  "라쿠우울절 ",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20260128_98/1769610378675Y5HKU_JPEG/VSdLRMKIe0_03.jpg",
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  60,
+        "adult":  false,
+        "createdDate":  "2026-01-28 23:25:53",
+        "readCount":  31
     },
     {
         "clipUID":  "JBjKUzNGp7",
@@ -658,6 +678,18 @@ window.RCNS_CLIPS = [
         "duration":  46,
         "adult":  false,
         "createdDate":  "2024-08-13 23:38:52",
+        "readCount":  31
+    },
+    {
+        "clipUID":  "kryF32Egjt",
+        "videoId":  "7874E228F6C9433DEF7AC73764D59A760270",
+        "clipTitle":  "맛챠와 첫날밤",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20260506_248/1778071481095QIsQS_JPEG/0uu7EFnba9_03.jpg",
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  16,
+        "adult":  false,
+        "createdDate":  "2026-05-06 21:44:29",
         "readCount":  30
     },
     {
@@ -670,7 +702,7 @@ window.RCNS_CLIPS = [
         "duration":  26,
         "adult":  false,
         "createdDate":  "2025-09-24 21:47:30",
-        "readCount":  29
+        "readCount":  30
     },
     {
         "clipUID":  "LyP1qOeXAX",
@@ -682,7 +714,7 @@ window.RCNS_CLIPS = [
         "duration":  60,
         "adult":  false,
         "createdDate":  "2025-08-15 17:21:47",
-        "readCount":  29
+        "readCount":  30
     },
     {
         "clipUID":  "nDlfnnjtXo",
@@ -694,19 +726,7 @@ window.RCNS_CLIPS = [
         "duration":  58,
         "adult":  false,
         "createdDate":  "2024-11-10 21:15:26",
-        "readCount":  29
-    },
-    {
-        "clipUID":  "kryF32Egjt",
-        "videoId":  "7874E228F6C9433DEF7AC73764D59A760270",
-        "clipTitle":  "맛챠와 첫날밤",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20260506_248/1778071481095QIsQS_JPEG/0uu7EFnba9_03.jpg",
-        "categoryType":  "ETC",
-        "clipCategory":  "talk",
-        "duration":  16,
-        "adult":  false,
-        "createdDate":  "2026-05-06 21:44:29",
-        "readCount":  28
+        "readCount":  30
     },
     {
         "clipUID":  "YdL6jPEFCZ",
@@ -718,7 +738,7 @@ window.RCNS_CLIPS = [
         "duration":  26,
         "adult":  false,
         "createdDate":  "2024-11-19 01:04:26",
-        "readCount":  28
+        "readCount":  29
     },
     {
         "clipUID":  "5vGMV3khTX",
@@ -730,7 +750,7 @@ window.RCNS_CLIPS = [
         "duration":  17,
         "adult":  false,
         "createdDate":  "2025-08-03 20:50:49",
-        "readCount":  27
+        "readCount":  28
     },
     {
         "clipUID":  "vDwunp2Y9m",
@@ -742,7 +762,7 @@ window.RCNS_CLIPS = [
         "duration":  34,
         "adult":  false,
         "createdDate":  "2025-03-09 20:37:42",
-        "readCount":  27
+        "readCount":  28
     },
     {
         "clipUID":  "IuwyORapQP",
@@ -754,7 +774,7 @@ window.RCNS_CLIPS = [
         "duration":  40,
         "adult":  false,
         "createdDate":  "2025-01-25 17:38:48",
-        "readCount":  27
+        "readCount":  28
     },
     {
         "clipUID":  "N4bPZUt1lr",
@@ -766,6 +786,54 @@ window.RCNS_CLIPS = [
         "duration":  21,
         "adult":  false,
         "createdDate":  "2024-06-04 22:02:39",
+        "readCount":  28
+    },
+    {
+        "clipUID":  "mq5hScD2iT",
+        "videoId":  "E4226A0742ECE25435FE983CD20725C70E09",
+        "clipTitle":  "돌핀팬츠가 나와서 너무 좋아하는 우리 아저씨~",
+        "thumbnailImageUrl":  null,
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  31,
+        "adult":  true,
+        "createdDate":  "2026-11-14 00:17:58",
+        "readCount":  27
+    },
+    {
+        "clipUID":  "vNj9PDnAj4",
+        "videoId":  "F683F88DA2EB06847C4126AE0E820EF3DC32",
+        "clipTitle":  "가고싶은 아저씨",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20260426_99/1777211845719hl0l2_JPEG/ok7gJAYxsy_03.jpg",
+        "categoryType":  "GAME",
+        "clipCategory":  "RACCOIN_Coin_Pusher_Roguelike",
+        "duration":  23,
+        "adult":  false,
+        "createdDate":  "2026-04-26 22:57:14",
+        "readCount":  27
+    },
+    {
+        "clipUID":  "lXj0Ex3HF4",
+        "videoId":  "B3897394B2631A3790D49D6A553FBF3DD2BF",
+        "clipTitle":  "아르싸우나 1",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20250817_65/1755420704530nfXNF_JPEG/8Hmjf83yt7_03.jpg",
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  60,
+        "adult":  false,
+        "createdDate":  "2025-08-17 17:51:07",
+        "readCount":  27
+    },
+    {
+        "clipUID":  "R29j6kCsD3",
+        "videoId":  "4EF30A2B22333AAC67756869BD409CBAAE98",
+        "clipTitle":  "오죠사마 현장 버전 오지상 감상 타임",
+        "thumbnailImageUrl":  null,
+        "categoryType":  "ETC",
+        "clipCategory":  "art",
+        "duration":  49,
+        "adult":  true,
+        "createdDate":  "2024-12-05 21:52:08",
         "readCount":  27
     },
     {
@@ -781,27 +849,63 @@ window.RCNS_CLIPS = [
         "readCount":  26
     },
     {
-        "clipUID":  "vNj9PDnAj4",
-        "videoId":  "F683F88DA2EB06847C4126AE0E820EF3DC32",
-        "clipTitle":  "가고싶은 아저씨",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20260426_99/1777211845719hl0l2_JPEG/ok7gJAYxsy_03.jpg",
-        "categoryType":  "GAME",
-        "clipCategory":  "RACCOIN_Coin_Pusher_Roguelike",
-        "duration":  23,
+        "clipUID":  "JHwIS1HuGt",
+        "videoId":  "9C75500A39B4377ED99A41F69CAD8C5F6FA2",
+        "clipTitle":  "아르샤?",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20260617_277/1781705369476Qx9zK_JPEG/EwzrL559Xh_03.jpg",
+        "categoryType":  null,
+        "clipCategory":  "",
+        "duration":  17,
         "adult":  false,
-        "createdDate":  "2026-04-26 22:57:14",
+        "createdDate":  "2026-06-17 23:08:55",
         "readCount":  26
     },
     {
-        "clipUID":  "lXj0Ex3HF4",
-        "videoId":  "B3897394B2631A3790D49D6A553FBF3DD2BF",
-        "clipTitle":  "아르싸우나 1",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20250817_65/1755420704530nfXNF_JPEG/8Hmjf83yt7_03.jpg",
+        "clipUID":  "FJzi1ZdlZ1",
+        "videoId":  "5C7C5F7C259EFE364E21757BD6F9E80411AA",
+        "clipTitle":  "삼바 무반주로 맛보기",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20260516_190/1778908422918fGvIQ_JPEG/SFTjuezDC9_04.jpg",
         "categoryType":  "ETC",
         "clipCategory":  "talk",
-        "duration":  60,
+        "duration":  21,
         "adult":  false,
-        "createdDate":  "2025-08-17 17:51:07",
+        "createdDate":  "2026-05-16 14:13:29",
+        "readCount":  26
+    },
+    {
+        "clipUID":  "fj3fssulIf",
+        "videoId":  "9514D5FE6C22461488FCC1FA8BF1CFC04208",
+        "clipTitle":  "혈기 왕성한 방들 ",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20260311_50/1773237540579xl37U_JPEG/71Z7StCD0D_03.jpg",
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  104,
+        "adult":  false,
+        "createdDate":  "2026-03-11 22:58:14",
+        "readCount":  26
+    },
+    {
+        "clipUID":  "gr6DHic92s",
+        "videoId":  "3D97EDF78BDE6EE27D44D9DA3DC67EB9F2D6",
+        "clipTitle":  "   누가 메이드가 아니라  중성마녀를 대려왔어",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20250815_266/1755246231698WCcfC_JPEG/0yHUFXCi14_03.jpg",
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  57,
+        "adult":  false,
+        "createdDate":  "2025-08-15 17:22:16",
+        "readCount":  26
+    },
+    {
+        "clipUID":  "Sl9dfkTeBx",
+        "videoId":  "A5E17CB1A4996A00EEF6459CDD00C9980E60",
+        "clipTitle":  "아저씨의 사랑고백",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20250426_40/1745654849090N8JEo_JPEG/ExLzBcH7yt_03.jpg",
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  10,
+        "adult":  false,
+        "createdDate":  "2025-04-26 17:07:20",
         "readCount":  26
     },
     {
@@ -817,66 +921,6 @@ window.RCNS_CLIPS = [
         "readCount":  26
     },
     {
-        "clipUID":  "R29j6kCsD3",
-        "videoId":  "4EF30A2B22333AAC67756869BD409CBAAE98",
-        "clipTitle":  "오죠사마 현장 버전 오지상 감상 타임",
-        "thumbnailImageUrl":  null,
-        "categoryType":  "ETC",
-        "clipCategory":  "art",
-        "duration":  49,
-        "adult":  true,
-        "createdDate":  "2024-12-05 21:52:08",
-        "readCount":  26
-    },
-    {
-        "clipUID":  "JHwIS1HuGt",
-        "videoId":  "9C75500A39B4377ED99A41F69CAD8C5F6FA2",
-        "clipTitle":  "아르샤?",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20260617_277/1781705369476Qx9zK_JPEG/EwzrL559Xh_03.jpg",
-        "categoryType":  null,
-        "clipCategory":  "",
-        "duration":  17,
-        "adult":  false,
-        "createdDate":  "2026-06-17 23:08:55",
-        "readCount":  25
-    },
-    {
-        "clipUID":  "FJzi1ZdlZ1",
-        "videoId":  "5C7C5F7C259EFE364E21757BD6F9E80411AA",
-        "clipTitle":  "삼바 무반주로 맛보기",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20260516_190/1778908422918fGvIQ_JPEG/SFTjuezDC9_04.jpg",
-        "categoryType":  "ETC",
-        "clipCategory":  "talk",
-        "duration":  21,
-        "adult":  false,
-        "createdDate":  "2026-05-16 14:13:29",
-        "readCount":  25
-    },
-    {
-        "clipUID":  "gr6DHic92s",
-        "videoId":  "3D97EDF78BDE6EE27D44D9DA3DC67EB9F2D6",
-        "clipTitle":  "   누가 메이드가 아니라  중성마녀를 대려왔어",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20250815_266/1755246231698WCcfC_JPEG/0yHUFXCi14_03.jpg",
-        "categoryType":  "ETC",
-        "clipCategory":  "talk",
-        "duration":  57,
-        "adult":  false,
-        "createdDate":  "2025-08-15 17:22:16",
-        "readCount":  25
-    },
-    {
-        "clipUID":  "Sl9dfkTeBx",
-        "videoId":  "A5E17CB1A4996A00EEF6459CDD00C9980E60",
-        "clipTitle":  "아저씨의 사랑고백",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20250426_40/1745654849090N8JEo_JPEG/ExLzBcH7yt_03.jpg",
-        "categoryType":  "ETC",
-        "clipCategory":  "talk",
-        "duration":  10,
-        "adult":  false,
-        "createdDate":  "2025-04-26 17:07:20",
-        "readCount":  25
-    },
-    {
         "clipUID":  "a2xJkbvfDQ",
         "videoId":  "7FF381FAE01CD8A4704DA89AE37BD99D2A4E",
         "clipTitle":  "나쁜말",
@@ -886,19 +930,7 @@ window.RCNS_CLIPS = [
         "duration":  10,
         "adult":  false,
         "createdDate":  "2026-04-12 19:15:15",
-        "readCount":  24
-    },
-    {
-        "clipUID":  "fj3fssulIf",
-        "videoId":  "9514D5FE6C22461488FCC1FA8BF1CFC04208",
-        "clipTitle":  "혈기 왕성한 방들 ",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20260311_50/1773237540579xl37U_JPEG/71Z7StCD0D_03.jpg",
-        "categoryType":  "ETC",
-        "clipCategory":  "talk",
-        "duration":  104,
-        "adult":  false,
-        "createdDate":  "2026-03-11 22:58:14",
-        "readCount":  24
+        "readCount":  25
     },
     {
         "clipUID":  "R4G2nupsdd",
@@ -910,6 +942,42 @@ window.RCNS_CLIPS = [
         "duration":  14,
         "adult":  false,
         "createdDate":  "2024-11-27 22:28:32",
+        "readCount":  25
+    },
+    {
+        "clipUID":  "l2N231guCl",
+        "videoId":  "70EEF87ABF31054B43A900C54BA4B2D25047",
+        "clipTitle":  "체인지드 실험실 ",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20260311_290/1773238893978I7DNu_JPEG/aAOWwY6ull_03.jpg",
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  120,
+        "adult":  false,
+        "createdDate":  "2026-03-11 23:19:36",
+        "readCount":  24
+    },
+    {
+        "clipUID":  "hv1NeFj1wI",
+        "videoId":  "316BDDACD8291E30ECFA5AAD0EDA52C870FF",
+        "clipTitle":  "고인물 메이드",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20250815_92/1755245748712katzB_JPEG/kImmuKLqUK_03.jpg",
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  60,
+        "adult":  false,
+        "createdDate":  "2025-08-15 17:15:10",
+        "readCount":  24
+    },
+    {
+        "clipUID":  "i1AKQvFKkC",
+        "videoId":  "47C1E1D5E886AFFFE6AE3E18CECAAE499F65",
+        "clipTitle":  "야레야레 나이트로",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20250524_180/17480707734940GeBn_JPEG/WA675sTgWA_03.jpg",
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  37,
+        "adult":  false,
+        "createdDate":  "2025-05-24 16:12:17",
         "readCount":  24
     },
     {
@@ -925,54 +993,6 @@ window.RCNS_CLIPS = [
         "readCount":  23
     },
     {
-        "clipUID":  "Me27k7GDEP",
-        "videoId":  "C3DC8E53693C6F22F0DD39DD2F0076B17444",
-        "clipTitle":  "....",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20260802_218/1785679590712SunGU_JPEG/CqdrxbwKCQ_03.jpg",
-        "categoryType":  "ETC",
-        "clipCategory":  "talk",
-        "duration":  15,
-        "adult":  false,
-        "createdDate":  "2026-08-02 23:06:11",
-        "readCount":  23
-    },
-    {
-        "clipUID":  "l2N231guCl",
-        "videoId":  "70EEF87ABF31054B43A900C54BA4B2D25047",
-        "clipTitle":  "체인지드 실험실 ",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20260311_290/1773238893978I7DNu_JPEG/aAOWwY6ull_03.jpg",
-        "categoryType":  "ETC",
-        "clipCategory":  "talk",
-        "duration":  120,
-        "adult":  false,
-        "createdDate":  "2026-03-11 23:19:36",
-        "readCount":  23
-    },
-    {
-        "clipUID":  "hv1NeFj1wI",
-        "videoId":  "316BDDACD8291E30ECFA5AAD0EDA52C870FF",
-        "clipTitle":  "고인물 메이드",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20250815_92/1755245748712katzB_JPEG/kImmuKLqUK_03.jpg",
-        "categoryType":  "ETC",
-        "clipCategory":  "talk",
-        "duration":  60,
-        "adult":  false,
-        "createdDate":  "2025-08-15 17:15:10",
-        "readCount":  23
-    },
-    {
-        "clipUID":  "i1AKQvFKkC",
-        "videoId":  "47C1E1D5E886AFFFE6AE3E18CECAAE499F65",
-        "clipTitle":  "야레야레 나이트로",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20250524_180/17480707734940GeBn_JPEG/WA675sTgWA_03.jpg",
-        "categoryType":  "ETC",
-        "clipCategory":  "talk",
-        "duration":  37,
-        "adult":  false,
-        "createdDate":  "2025-05-24 16:12:17",
-        "readCount":  23
-    },
-    {
         "clipUID":  "domAWOkf7q",
         "videoId":  "A99F864ADA1109C827E9134349439134761D",
         "clipTitle":  "1 못말리는 아가씨",
@@ -982,7 +1002,7 @@ window.RCNS_CLIPS = [
         "duration":  109,
         "adult":  false,
         "createdDate":  "2026-04-01 22:06:02",
-        "readCount":  22
+        "readCount":  23
     },
     {
         "clipUID":  "aIcqxIzzpv",
@@ -994,7 +1014,7 @@ window.RCNS_CLIPS = [
         "duration":  97,
         "adult":  false,
         "createdDate":  "2025-08-15 17:09:27",
-        "readCount":  22
+        "readCount":  23
     },
     {
         "clipUID":  "uk6caxuatD",
@@ -1006,7 +1026,7 @@ window.RCNS_CLIPS = [
         "duration":  60,
         "adult":  false,
         "createdDate":  "2024-10-15 22:49:00",
-        "readCount":  22
+        "readCount":  23
     },
     {
         "clipUID":  "gyBjgKC19R",
@@ -1018,7 +1038,7 @@ window.RCNS_CLIPS = [
         "duration":  39,
         "adult":  false,
         "createdDate":  "2024-08-17 23:27:12",
-        "readCount":  22
+        "readCount":  23
     },
     {
         "clipUID":  "EIefoRbSLh",
@@ -1030,7 +1050,7 @@ window.RCNS_CLIPS = [
         "duration":  58,
         "adult":  false,
         "createdDate":  "2026-05-19 23:04:48",
-        "readCount":  21
+        "readCount":  22
     },
     {
         "clipUID":  "EhhYbgHDp3",
@@ -1042,7 +1062,7 @@ window.RCNS_CLIPS = [
         "duration":  54,
         "adult":  false,
         "createdDate":  "2025-08-15 17:22:40",
-        "readCount":  21
+        "readCount":  22
     },
     {
         "clipUID":  "UjkzGr2BoU",
@@ -1054,19 +1074,7 @@ window.RCNS_CLIPS = [
         "duration":  60,
         "adult":  false,
         "createdDate":  "2024-08-13 23:37:07",
-        "readCount":  21
-    },
-    {
-        "clipUID":  "CVsoKsEKXq",
-        "videoId":  "CD94632F49B9C5C9D29A198B8C5F07A0D6FB",
-        "clipTitle":  "뭔 포즈야ㅋㅋㅋ",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20260716_162/1784212951209yAXX9_JPEG/gdPfaa0KMB_03.jpg",
-        "categoryType":  null,
-        "clipCategory":  "",
-        "duration":  62,
-        "adult":  false,
-        "createdDate":  "2026-07-16 23:40:55",
-        "readCount":  20
+        "readCount":  22
     },
     {
         "clipUID":  "GVWvRQfGuv",
@@ -1078,6 +1086,54 @@ window.RCNS_CLIPS = [
         "duration":  14,
         "adult":  false,
         "createdDate":  "2026-05-16 14:23:21",
+        "readCount":  21
+    },
+    {
+        "clipUID":  "4179QhAvm4",
+        "videoId":  "6A32E15308D85F5F0690E64A08116773375E",
+        "clipTitle":  "프로토젠 레비완드 해 줘",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20250822_2/1755871064765kTf9A_JPEG/gbIDay9adB_03.jpg",
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  60,
+        "adult":  false,
+        "createdDate":  "2025-08-22 22:57:14",
+        "readCount":  21
+    },
+    {
+        "clipUID":  "zqWtRePpgX",
+        "videoId":  "8EA6899C27E9454082657E788E22A210D8B9",
+        "clipTitle":  " 비명맛집 아저씨",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20250424_263/1745500436578TR2jt_JPEG/7PAtg3JrjZ_03.jpg",
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  29,
+        "adult":  false,
+        "createdDate":  "2025-04-24 22:13:32",
+        "readCount":  21
+    },
+    {
+        "clipUID":  "MCbmNdiCsM",
+        "videoId":  "CEE408B9AF4E81C25389346FF3FB11FE605A",
+        "clipTitle":  "솔직히 ",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20260527_158/1779886749233bQ7ym_JPEG/D7C0QTO2gh_03.jpg",
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  60,
+        "adult":  false,
+        "createdDate":  "2026-05-27 21:58:45",
+        "readCount":  20
+    },
+    {
+        "clipUID":  "cudfpw0oR5",
+        "videoId":  "3A86DFA33D62328DE4B7E300A9B7110B6DD1",
+        "clipTitle":  "꽃무... 예?",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20260213_206/1770992251475GzFLb_JPEG/IrM2ua0xH1_03.jpg",
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  19,
+        "adult":  false,
+        "createdDate":  "2026-02-13 23:17:17",
         "readCount":  20
     },
     {
@@ -1093,42 +1149,6 @@ window.RCNS_CLIPS = [
         "readCount":  20
     },
     {
-        "clipUID":  "zqWtRePpgX",
-        "videoId":  "8EA6899C27E9454082657E788E22A210D8B9",
-        "clipTitle":  " 비명맛집 아저씨",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20250424_263/1745500436578TR2jt_JPEG/7PAtg3JrjZ_03.jpg",
-        "categoryType":  "ETC",
-        "clipCategory":  "talk",
-        "duration":  29,
-        "adult":  false,
-        "createdDate":  "2025-04-24 22:13:32",
-        "readCount":  20
-    },
-    {
-        "clipUID":  "MCbmNdiCsM",
-        "videoId":  "CEE408B9AF4E81C25389346FF3FB11FE605A",
-        "clipTitle":  "솔직히 ",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20260527_158/1779886749233bQ7ym_JPEG/D7C0QTO2gh_03.jpg",
-        "categoryType":  "ETC",
-        "clipCategory":  "talk",
-        "duration":  60,
-        "adult":  false,
-        "createdDate":  "2026-05-27 21:58:45",
-        "readCount":  19
-    },
-    {
-        "clipUID":  "cudfpw0oR5",
-        "videoId":  "3A86DFA33D62328DE4B7E300A9B7110B6DD1",
-        "clipTitle":  "꽃무... 예?",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20260213_206/1770992251475GzFLb_JPEG/IrM2ua0xH1_03.jpg",
-        "categoryType":  "ETC",
-        "clipCategory":  "talk",
-        "duration":  19,
-        "adult":  false,
-        "createdDate":  "2026-02-13 23:17:17",
-        "readCount":  19
-    },
-    {
         "clipUID":  "2jCmvHNMUJ",
         "videoId":  "CF12293E92F66BBD74301BDAB472D834F984",
         "clipTitle":  "라만쿤~ 보고 있어?",
@@ -1138,19 +1158,7 @@ window.RCNS_CLIPS = [
         "duration":  60,
         "adult":  false,
         "createdDate":  "2025-11-25 19:43:06",
-        "readCount":  19
-    },
-    {
-        "clipUID":  "4179QhAvm4",
-        "videoId":  "6A32E15308D85F5F0690E64A08116773375E",
-        "clipTitle":  "프로토젠 레비완드 해 줘",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20250822_2/1755871064765kTf9A_JPEG/gbIDay9adB_03.jpg",
-        "categoryType":  "ETC",
-        "clipCategory":  "talk",
-        "duration":  60,
-        "adult":  false,
-        "createdDate":  "2025-08-22 22:57:14",
-        "readCount":  19
+        "readCount":  20
     },
     {
         "clipUID":  "tYINyyItOk",
@@ -1162,6 +1170,18 @@ window.RCNS_CLIPS = [
         "duration":  44,
         "adult":  false,
         "createdDate":  "2025-08-15 17:26:32",
+        "readCount":  20
+    },
+    {
+        "clipUID":  "CVsoKsEKXq",
+        "videoId":  "CD94632F49B9C5C9D29A198B8C5F07A0D6FB",
+        "clipTitle":  "뭔 포즈야ㅋㅋㅋ",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20260716_162/1784212951209yAXX9_JPEG/gdPfaa0KMB_03.jpg",
+        "categoryType":  null,
+        "clipCategory":  "",
+        "duration":  62,
+        "adult":  false,
+        "createdDate":  "2026-07-16 23:40:55",
         "readCount":  19
     },
     {
@@ -1933,6 +1953,30 @@ window.RCNS_CLIPS = [
         "readCount":  12
     },
     {
+        "clipUID":  "N3hIkZ0S6B",
+        "videoId":  "38CA82ABC36780A5E387665EE5AC7FAFC09B",
+        "clipTitle":  "히히힣",
+        "thumbnailImageUrl":  null,
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  52,
+        "adult":  true,
+        "createdDate":  "2026-11-14 01:01:40",
+        "readCount":  11
+    },
+    {
+        "clipUID":  "2APrxSW3zA",
+        "videoId":  "27305895BEE3DBF3E285B9822D7AE024021C",
+        "clipTitle":  "??? : 옆 동네 오스카는 개백정이고",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20261108_135/1794134805716d1QKx_JPEG/e5hfAd5Mtm_03.jpg",
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  10,
+        "adult":  false,
+        "createdDate":  "2026-11-08 19:46:38",
+        "readCount":  11
+    },
+    {
         "clipUID":  "TDl60UKoda",
         "videoId":  "5FE469A8F7BDBE504EF0346FF3FB11FE605A",
         "clipTitle":  "짜증나",
@@ -2149,15 +2193,15 @@ window.RCNS_CLIPS = [
         "readCount":  10
     },
     {
-        "clipUID":  "2APrxSW3zA",
-        "videoId":  "27305895BEE3DBF3E285B9822D7AE024021C",
-        "clipTitle":  "??? : 옆 동네 오스카는 개백정이고",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20261108_135/1794134805716d1QKx_JPEG/e5hfAd5Mtm_03.jpg",
+        "clipUID":  "09zMvvouKV",
+        "videoId":  "247C3DFB4C578780E518757BD6F9E80411AA",
+        "clipTitle":  "열심히 살아라 얘들아",
+        "thumbnailImageUrl":  null,
         "categoryType":  "ETC",
         "clipCategory":  "talk",
-        "duration":  10,
-        "adult":  false,
-        "createdDate":  "2026-11-08 19:46:38",
+        "duration":  35,
+        "adult":  true,
+        "createdDate":  "2026-11-14 01:02:26",
         "readCount":  9
     },
     {
@@ -2315,6 +2359,30 @@ window.RCNS_CLIPS = [
         "adult":  false,
         "createdDate":  "2025-03-29 00:29:42",
         "readCount":  8
+    },
+    {
+        "clipUID":  "EEX7VTGmjT",
+        "videoId":  "852650E01D29F8812A1522CB44CED9510A5C",
+        "clipTitle":  "맛있어져라 주문 너구리",
+        "thumbnailImageUrl":  null,
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  18,
+        "adult":  true,
+        "createdDate":  "2026-11-14 00:54:28",
+        "readCount":  7
+    },
+    {
+        "clipUID":  "kdkUKGIRUI",
+        "videoId":  "E02663775FE90F1715D966550662A9952080",
+        "clipTitle":  "돌핀뽑힌 아저씨 반응",
+        "thumbnailImageUrl":  null,
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  22,
+        "adult":  true,
+        "createdDate":  "2026-11-14 00:15:50",
+        "readCount":  7
     },
     {
         "clipUID":  "axZy7eHBkG",
@@ -2569,6 +2637,18 @@ window.RCNS_CLIPS = [
         "readCount":  6
     },
     {
+        "clipUID":  "r0hdps3V5r",
+        "videoId":  "62ED0A6310668015D1EFD80CA7C02337939F",
+        "clipTitle":  "오이시쿠나레~",
+        "thumbnailImageUrl":  null,
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  16,
+        "adult":  true,
+        "createdDate":  "2026-11-14 00:53:40",
+        "readCount":  5
+    },
+    {
         "clipUID":  "wh9QzLIXAw",
         "videoId":  "80C4CBE1552895CB5C0792B3E8799DCE9E7A",
         "clipTitle":  "고장난 아저씨 고가로 삽니다",
@@ -2603,6 +2683,30 @@ window.RCNS_CLIPS = [
         "adult":  false,
         "createdDate":  "2025-03-03 22:16:10",
         "readCount":  5
+    },
+    {
+        "clipUID":  "BwlYQzomzk",
+        "videoId":  "3F668AB87DE779E657BC81E760F310062BC7",
+        "clipTitle":  "황금 오이시쿠나레",
+        "thumbnailImageUrl":  null,
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  29,
+        "adult":  true,
+        "createdDate":  "2026-11-14 00:53:19",
+        "readCount":  4
+    },
+    {
+        "clipUID":  "RhCjhEz8v5",
+        "videoId":  "638F1FB59E4C8F35EF0CD2A0111826C28D30",
+        "clipTitle":  "팬텀키스",
+        "thumbnailImageUrl":  null,
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  31,
+        "adult":  true,
+        "createdDate":  "2026-11-13 23:43:43",
+        "readCount":  4
     },
     {
         "clipUID":  "HyTEMU4Isg",
@@ -2773,6 +2877,30 @@ window.RCNS_CLIPS = [
         "readCount":  3
     },
     {
+        "clipUID":  "Af4ur6fBwj",
+        "videoId":  "0641E624C2DB5497A74108BA95D58F5A04AF",
+        "clipTitle":  "아저씨표 ASMR",
+        "thumbnailImageUrl":  null,
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  34,
+        "adult":  true,
+        "createdDate":  "2026-11-13 23:32:41",
+        "readCount":  2
+    },
+    {
+        "clipUID":  "Qot6DCqYNU",
+        "videoId":  "19C8B95D2B5A7D8AEDF10AF7884589909A7F",
+        "clipTitle":  "잘못눌렀다!",
+        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20261109_71/1794151990138eXMqM_JPEG/chX6XE9eaT_03.jpg",
+        "categoryType":  "ETC",
+        "clipCategory":  "talk",
+        "duration":  12,
+        "adult":  false,
+        "createdDate":  "2026-11-09 00:33:02",
+        "readCount":  2
+    },
+    {
         "clipUID":  "4lALol5dxL",
         "videoId":  "093203FCB9A8292B92DA8FFD352737DAEC8A",
         "clipTitle":  "아저씨의 행복",
@@ -2867,18 +2995,6 @@ window.RCNS_CLIPS = [
         "adult":  false,
         "createdDate":  "2026-01-01 21:24:13",
         "readCount":  2
-    },
-    {
-        "clipUID":  "Qot6DCqYNU",
-        "videoId":  "19C8B95D2B5A7D8AEDF10AF7884589909A7F",
-        "clipTitle":  "잘못눌렀다!",
-        "thumbnailImageUrl":  "https://video-phinf.pstatic.net/20261109_71/1794151990138eXMqM_JPEG/chX6XE9eaT_03.jpg",
-        "categoryType":  "ETC",
-        "clipCategory":  "talk",
-        "duration":  12,
-        "adult":  false,
-        "createdDate":  "2026-11-09 00:33:02",
-        "readCount":  1
     },
     {
         "clipUID":  "wFiMZ0Oylm",

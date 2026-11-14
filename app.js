@@ -1,12 +1,12 @@
 // ============================================================================
-// 라쿠너스 인기 클립 박제관 (CHZZK CLIP ARCHIVE) - 실시간 CORS 프록시 동기화 지원
+// 라쿠너스 인기 클립 박제관 (CHZZK CLIP ARCHIVE) - 실시간 동기화 & 자동 병합 엔진
 // ============================================================================
 
 const CHANNEL_ID = "a4a172706bed9152f18df8796bde093b";
 const BOOKMARK_STORAGE_KEY = "rcns_clip_bookmarks_v1";
 const CUSTOM_CLIPS_STORAGE_KEY = "rcns_custom_clips_v1";
-const LIVE_CACHE_STORAGE_KEY = "rcns_live_synced_clips_v1";
-const LIVE_META_STORAGE_KEY = "rcns_live_synced_meta_v1";
+const LIVE_CACHE_STORAGE_KEY = "rcns_live_synced_clips_v2";
+const LIVE_META_STORAGE_KEY = "rcns_live_synced_meta_v2";
 const PAGE_SIZE = 40;
 
 let allClips = [];
@@ -17,14 +17,29 @@ let currentTheme = "ALL";
 let bookmarkedUIDs = new Set();
 let isSyncing = false;
 
-// 다중 CORS 프록시 체인 (1순위: corsfix 고속 프록시, 2순위: allorigins, 3순위: codetabs)
+// 다중 CORS 프록시 체인
 const CORS_PROXY_BUILDERS = [
   (url) => `https://proxy.corsfix.com/?${url}`,
   (url) => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
   (url) => `https://api.codetabs.com/v1/proxy?quest=${url}`
 ];
 
-async function fetchChzzkJsonWithProxy(targetUrl, timeoutMs = 7000) {
+// 1단계: 브라우저 캐시를 우회하여 최신 clips-data.js 재로드 (GitHub Actions 자동 갱신분 즉시 반영)
+function reloadClipsDataScript() {
+  return new Promise((resolve) => {
+    const oldScript = document.getElementById("dynamicClipsDataScript");
+    if (oldScript) oldScript.remove();
+
+    const script = document.createElement("script");
+    script.id = "dynamicClipsDataScript";
+    script.src = `clips-data.js?t=${Date.now()}`;
+    script.onload = () => resolve(true);
+    script.onerror = () => resolve(false);
+    document.head.appendChild(script);
+  });
+}
+
+async function fetchChzzkJsonWithProxy(targetUrl, timeoutMs = 5500) {
   let lastError = null;
 
   for (const buildProxyUrl of CORS_PROXY_BUILDERS) {
@@ -35,6 +50,7 @@ async function fetchChzzkJsonWithProxy(targetUrl, timeoutMs = 7000) {
     try {
       const res = await fetch(proxiedUrl, {
         method: "GET",
+        cache: "no-store",
         signal: controller.signal
       });
       clearTimeout(timer);
@@ -57,20 +73,103 @@ async function fetchChzzkJsonWithProxy(targetUrl, timeoutMs = 7000) {
   throw lastError || new Error("모든 CORS 프록시 연결 실패");
 }
 
-// 치지직 API에서 채널 상태 + 전체 클립 및 실시간 조회수 동기화
+function normalizeClipItem(item, existing) {
+  return {
+    clipUID: item.clipUID,
+    videoId: item.videoId ?? existing?.videoId ?? "",
+    clipTitle: item.clipTitle ?? existing?.clipTitle ?? "",
+    thumbnailImageUrl: item.thumbnailImageUrl ?? existing?.thumbnailImageUrl ?? null,
+    categoryType: item.categoryType ?? existing?.categoryType ?? null,
+    clipCategory: item.clipCategory ?? existing?.clipCategory ?? null,
+    duration: item.duration ?? existing?.duration ?? 0,
+    adult: Boolean(item.adult ?? existing?.adult),
+    createdDate: item.createdDate ?? existing?.createdDate ?? "",
+    readCount: Math.max(Number(item.readCount) || 0, Number(existing?.readCount) || 0)
+  };
+}
+
+function saveLiveClipsToStorage(clipMap) {
+  const mergedLiveArray = [...clipMap.values()].sort((a, b) => {
+    const diff = (b.readCount || 0) - (a.readCount || 0);
+    if (diff !== 0) return diff;
+    return String(b.createdDate || "").localeCompare(String(a.createdDate || ""));
+  });
+
+  const syncTimeStr = new Date().toLocaleTimeString("ko-KR", {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit"
+  });
+
+  localStorage.setItem(
+    LIVE_CACHE_STORAGE_KEY,
+    JSON.stringify({
+      syncedAt: syncTimeStr,
+      clips: mergedLiveArray
+    })
+  );
+
+  return syncTimeStr;
+}
+
+// 치지직 API 및 최신 clips-data.js에서 실시간 클립·조회수 동기화
 async function syncFromChzzkLive(manualTrigger = false) {
   if (isSyncing) return;
   isSyncing = true;
 
   const syncBtn = document.getElementById("syncNowBtn");
   const syncStatusText = document.getElementById("syncStatusText");
+  const prevTotalCount = allClips.length;
 
   syncBtn.classList.add("syncing");
   syncBtn.textContent = "⏳ 동기화 중...";
-  syncStatusText.textContent = "🔄 치지직 서버에서 실시간 클립·조회수 동기화 중...";
+  syncStatusText.textContent = "🔄 최신 클립 및 실시간 조회수 확인 중...";
 
   try {
-    // 1. 채널 실시간 정보 (생방송 여부, 팔로워 수) 조회
+    // Step 0: 캐시 우회하여 최신 clips-data.js 다시 읽기 (GitHub Actions가 갱신한 데이터 즉시 반영)
+    await reloadClipsDataScript();
+    loadUserData();
+    renderHeaderAndTop5();
+    applyFiltersAndRender(false);
+    refreshCurrentPlayingInfo();
+
+    // 현재 보유한 모든 클립을 Map으로 준비
+    const workingMap = new Map();
+    for (const c of allClips) {
+      workingMap.set(c.clipUID, c);
+    }
+
+    // Step 1: 가장 중요한 '최신순(RECENT) 1~2페이지'부터 최우선 호출! (방금 생성된 클립 즉시 확보)
+    let nextRecentUID = null;
+    let proxySucceeded = false;
+
+    for (let page = 0; page < 2; page++) {
+      let recentUrl = `https://api.chzzk.naver.com/service/v1/channels/${CHANNEL_ID}/clips?filterType=ALL&orderType=RECENT&size=50`;
+      if (nextRecentUID) {
+        recentUrl += `&clipUID=${encodeURIComponent(nextRecentUID)}`;
+      }
+      const recentContent = await fetchChzzkJsonWithProxy(recentUrl);
+      const list = recentContent?.data || [];
+      if (!list.length) break;
+
+      proxySucceeded = true;
+      for (const item of list) {
+        workingMap.set(item.clipUID, normalizeClipItem(item, workingMap.get(item.clipUID)));
+      }
+
+      // 최신 클립 확보 즉시 중간 저장 & UI 갱신
+      const syncTimeStr = saveLiveClipsToStorage(workingMap);
+      loadUserData();
+      renderHeaderAndTop5();
+      applyFiltersAndRender(false);
+      refreshCurrentPlayingInfo();
+      syncStatusText.textContent = `🟢 실시간 최신 클립 반영됨 (${syncTimeStr} · 총 ${allClips.length}개)`;
+
+      if (!recentContent?.page?.next?.clipUID) break;
+      nextRecentUID = recentContent.page.next.clipUID;
+    }
+
+    // Step 2: 채널 생방송 상태 및 팔로워 수 조회
     try {
       const chInfo = await fetchChzzkJsonWithProxy(
         `https://api.chzzk.naver.com/service/v1/channels/${CHANNEL_ID}`
@@ -83,114 +182,57 @@ async function syncFromChzzkLive(manualTrigger = false) {
             followerCount: chInfo.followerCount,
             openLive: chInfo.openLive,
             channelImageUrl: chInfo.channelImageUrl,
-            syncedAt: new Date().toISOString()
+            updatedAt: new Date().toISOString()
           })
         );
       }
     } catch (chErr) {
-      console.warn("채널 상태 조회 생략:", chErr);
+      // 채널 메타 실패는 무시하고 진행
     }
 
-    // 2. 인기순 전체 페이지 순회 조회 (최대 8페이지 = 400개)
-    const fetchedClipsMap = new Map();
-    let nextClipUID = null;
+    // Step 3: 인기순(POPULAR) 페이지 순회하여 전체 클립 실시간 조회수 업데이트
+    let nextPopUID = null;
     let nextReadCount = null;
 
-    for (let page = 0; page < 8; page++) {
-      let apiUrl = `https://api.chzzk.naver.com/service/v1/channels/${CHANNEL_ID}/clips?filterType=ALL&orderType=POPULAR&size=50`;
-      if (nextClipUID) {
-        apiUrl += `&clipUID=${encodeURIComponent(nextClipUID)}&readCount=${encodeURIComponent(nextReadCount ?? "")}`;
+    for (let page = 0; page < 6; page++) {
+      let popUrl = `https://api.chzzk.naver.com/service/v1/channels/${CHANNEL_ID}/clips?filterType=ALL&orderType=POPULAR&size=50`;
+      if (nextPopUID) {
+        popUrl += `&clipUID=${encodeURIComponent(nextPopUID)}&readCount=${encodeURIComponent(nextReadCount ?? "")}`;
       }
 
-      const content = await fetchChzzkJsonWithProxy(apiUrl);
-      const list = content?.data || [];
+      const popContent = await fetchChzzkJsonWithProxy(popUrl);
+      const list = popContent?.data || [];
       if (!list.length) break;
 
+      proxySucceeded = true;
       for (const item of list) {
-        fetchedClipsMap.set(item.clipUID, {
-          clipUID: item.clipUID,
-          videoId: item.videoId,
-          clipTitle: item.clipTitle,
-          thumbnailImageUrl: item.thumbnailImageUrl,
-          categoryType: item.categoryType,
-          clipCategory: item.clipCategory,
-          duration: item.duration,
-          adult: item.adult,
-          createdDate: item.createdDate,
-          readCount: item.readCount
-        });
+        workingMap.set(item.clipUID, normalizeClipItem(item, workingMap.get(item.clipUID)));
       }
 
-      if (!content?.page?.next?.clipUID) break;
-      nextClipUID = content.page.next.clipUID;
-      nextReadCount = content.page.next.readCount;
+      if (!popContent?.page?.next?.clipUID) break;
+      nextPopUID = popContent.page.next.clipUID;
+      nextReadCount = popContent.page.next.readCount;
     }
 
-    // 3. 최신순 1페이지도 추가로 조회해 방금 생성된 따끈따끈한 신규 클립 누락 방지
-    try {
-      const recentContent = await fetchChzzkJsonWithProxy(
-        `https://api.chzzk.naver.com/service/v1/channels/${CHANNEL_ID}/clips?filterType=ALL&orderType=RECENT&size=50`
-      );
-      for (const item of recentContent?.data || []) {
-        fetchedClipsMap.set(item.clipUID, {
-          clipUID: item.clipUID,
-          videoId: item.videoId,
-          clipTitle: item.clipTitle,
-          thumbnailImageUrl: item.thumbnailImageUrl,
-          categoryType: item.categoryType,
-          clipCategory: item.clipCategory,
-          duration: item.duration,
-          adult: item.adult,
-          createdDate: item.createdDate,
-          readCount: item.readCount
-        });
-      }
-    } catch (recErr) {
-      console.warn("최신 클립 추가 조회 생략:", recErr);
-    }
-
-    if (fetchedClipsMap.size > 0) {
-      // 기존 스냅샷과 병합 (최신 조회수 및 신규 클립 반영)
-      const baseClips = Array.isArray(window.RCNS_CLIPS) ? window.RCNS_CLIPS : [];
-      for (const oldClip of baseClips) {
-        if (!fetchedClipsMap.has(oldClip.clipUID)) {
-          fetchedClipsMap.set(oldClip.clipUID, oldClip);
-        }
-      }
-
-      const mergedLiveArray = [...fetchedClipsMap.values()].sort(
-        (a, b) => (b.readCount || 0) - (a.readCount || 0)
-      );
-
-      const syncTimeStr = new Date().toLocaleTimeString("ko-KR", {
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit"
-      });
-
-      localStorage.setItem(
-        LIVE_CACHE_STORAGE_KEY,
-        JSON.stringify({
-          syncedAt: syncTimeStr,
-          clips: mergedLiveArray
-        })
-      );
-
+    if (proxySucceeded) {
+      const syncTimeStr = saveLiveClipsToStorage(workingMap);
       loadUserData();
       renderHeaderAndTop5();
       applyFiltersAndRender(false);
       refreshCurrentPlayingInfo();
 
-      syncStatusText.textContent = `🟢 실시간 동기화 완료 (${syncTimeStr} 기준 · 총 ${allClips.length}개)`;
+      const addedDiff = Math.max(0, allClips.length - prevTotalCount);
+      const diffMsg = addedDiff > 0 ? ` · 🆕 신규 +${addedDiff}개!` : "";
+      syncStatusText.textContent = `🟢 실시간 동기화 완료 (${syncTimeStr} · 총 ${allClips.length}개${diffMsg})`;
       document.getElementById("lastSyncTimeHint").textContent =
         `✅ 치지직 공식 데이터와 실시간 동기화됨 (마지막 갱신: ${syncTimeStr})`;
     }
   } catch (err) {
-    console.warn("실시간 프록시 동기화 실패, 내장/캐시 데이터를 유지합니다:", err);
-    const isFileProtocol = window.location.protocol === "file:";
-    syncStatusText.textContent = isFileProtocol
-      ? "📦 스냅샷 모드 (로컬 서버/웹 호스팅 환경에서 실시간 동기화가 활성화됩니다)"
-      : "📦 캐시 데이터 사용 중 (잠시 후 다시 시도해주세요)";
+    console.warn("프록시 실시간 호출 제한, 최신 clips-data.js 데이터를 표시합니다:", err);
+    const metaTime = window.RCNS_CHANNEL_META?.updatedAt
+      ? window.RCNS_CHANNEL_META.updatedAt.slice(0, 16).replace("T", " ")
+      : "최신";
+    syncStatusText.textContent = `🟢 자동 갱신 데이터 적용됨 (기준: ${metaTime} · 총 ${allClips.length}개)`;
   } finally {
     isSyncing = false;
     syncBtn.classList.remove("syncing");
@@ -215,7 +257,7 @@ function applyChannelMeta(meta) {
   }
 }
 
-// 로컬 스토리지(실시간 캐시 + 찜 목록 + 수동 등록 클립)와 기본 스냅샷 결합
+// clips-data.js + 실시간 로컬 캐시 + 수동 등록 클립을 손실 없이 병합
 function loadUserData() {
   try {
     const savedBookmarks = JSON.parse(localStorage.getItem(BOOKMARK_STORAGE_KEY) || "[]");
@@ -242,41 +284,61 @@ function loadUserData() {
     customClips = [];
   }
 
-  let baseClips = Array.isArray(window.RCNS_CLIPS) ? window.RCNS_CLIPS : [];
+  const staticClips = Array.isArray(window.RCNS_CLIPS) ? window.RCNS_CLIPS : [];
+  let cachedClips = [];
   try {
     const cachedLive = JSON.parse(localStorage.getItem(LIVE_CACHE_STORAGE_KEY) || "null");
-    if (cachedLive && Array.isArray(cachedLive.clips) && cachedLive.clips.length >= baseClips.length) {
-      baseClips = cachedLive.clips;
-      if (cachedLive.syncedAt) {
-        document.getElementById("syncStatusText").textContent =
-          `🟢 최근 동기화 데이터 (${cachedLive.syncedAt})`;
-      }
+    if (cachedLive && Array.isArray(cachedLive.clips)) {
+      cachedClips = cachedLive.clips;
     }
   } catch (e) {
-    // 무시
+    cachedClips = [];
   }
 
-  // 중복 제거 병합
+  // 중요: 덮어쓰지 않고 staticClips + cachedClips + customClips를 clipUID 기준으로 완전 병합!
   const map = new Map();
-  for (const c of [...customClips, ...baseClips]) {
-    if (!map.has(c.clipUID)) {
+  for (const c of staticClips) {
+    if (c && c.clipUID) map.set(c.clipUID, c);
+  }
+  for (const c of cachedClips) {
+    if (c && c.clipUID) {
+      map.set(c.clipUID, normalizeClipItem(c, map.get(c.clipUID)));
+    }
+  }
+  for (const c of customClips) {
+    if (c && c.clipUID && !map.has(c.clipUID)) {
       map.set(c.clipUID, c);
     }
   }
+
   const merged = [...map.values()];
 
   // 인기순 기준 전체 랭킹 번호 부여
-  const sortedByPopular = [...merged].sort((a, b) => (b.readCount || 0) - (a.readCount || 0));
+  const sortedByPopular = [...merged].sort((a, b) => {
+    const diff = (b.readCount || 0) - (a.readCount || 0);
+    if (diff !== 0) return diff;
+    return String(b.createdDate || "").localeCompare(String(a.createdDate || ""));
+  });
+
   const rankMap = new Map();
   sortedByPopular.forEach((item, idx) => {
     rankMap.set(item.clipUID, idx + 1);
   });
 
-  allClips = merged.map((clip) => ({
-    ...clip,
-    popularRank: rankMap.get(clip.clipUID) || 999,
-    goroshiTheme: detectGoroshiTheme(clip)
-  }));
+  // 최신 클립(최근 7일 이내 생성) 판별
+  const nowMs = Date.now();
+  const sevenDaysMs = 7 * 24 * 60 * 60 * 1000;
+
+  allClips = merged.map((clip) => {
+    const createdMs = clip.createdDate ? new Date(clip.createdDate.replace(" ", "T")).getTime() : 0;
+    const isRecentNew = createdMs > 0 && nowMs - createdMs <= sevenDaysMs;
+    return {
+      ...clip,
+      popularRank: rankMap.get(clip.clipUID) || 999,
+      isRecentNew,
+      goroshiTheme: detectGoroshiTheme(clip)
+    };
+  });
 }
 
 function saveBookmarks() {
@@ -291,7 +353,7 @@ function detectGoroshiTheme(clip) {
   if (/아저씨|아찌|아재|오지상|삼촌/.test(t)) {
     return { code: "AJUSSI", label: "🧔 아저씨 시리즈" };
   }
-  if (/야레야레|아가씨|모에|큐우|엣큥|앙탈|매혹|다메|애교|귀여|뽀뽀|사랑해|재우기|도련님|메이드|변신|영창|하읏|앙~|뀽/.test(t)) {
+  if (/야레야레|아가씨|모에|큐우|엣큥|앙탈|매혹|다메|애교|귀여|뽀뽀|사랑해|재우기|도련님|메이드|변신|영창|하읏|앙~|뀽|오이시쿠|주문|키스|돌핀/.test(t)) {
     return { code: "AEGYO", label: "💖 애교·모에·영창" };
   }
   if (/절규|반찬|비명|극대노|괴롭|아쫌|고장|그랜절|납치|최악|매도|잔소리|희롱|살려/.test(t)) {
@@ -327,9 +389,15 @@ function formatDateOnly(dateStr) {
 // 상단 요약 스탯 및 TOP 5 직행열차 렌더링
 function renderHeaderAndTop5() {
   const totalViews = allClips.reduce((sum, c) => sum + (Number(c.readCount) || 0), 0);
+  const newClipsCount = allClips.filter((c) => c.isRecentNew).length;
+
   document.getElementById("totalClipsStat").textContent = `${allClips.length.toLocaleString()}개`;
   document.getElementById("totalViewsStat").textContent = `${totalViews.toLocaleString()}회`;
   document.getElementById("bookmarkCountBadge").textContent = bookmarkedUIDs.size;
+  const newBadgeEl = document.getElementById("newClipsCountBadge");
+  if (newBadgeEl) {
+    newBadgeEl.textContent = newClipsCount;
+  }
 
   const top5 = [...allClips].sort((a, b) => a.popularRank - b.popularRank).slice(0, 5);
   const top5Container = document.getElementById("quickTop5List");
@@ -351,7 +419,7 @@ function renderHeaderAndTop5() {
   });
 }
 
-// 현재 재생 중인 클립 메타 정보만 부드럽게 갱신 (조회수 변동 시)
+// 현재 재생 중인 클립 메타 정보만 부드럽게 갱신
 function refreshCurrentPlayingInfo() {
   if (!currentClipUID) return;
   const target = allClips.find((c) => c.clipUID === currentClipUID);
@@ -433,11 +501,18 @@ function applyFiltersAndRender(resetVisible = true) {
     return true;
   });
 
+  // '🆕 최신 클립' 탭이 선택된 경우 항상 최신 등록순을 우선 적용해 방금 올라온 클립이 맨 위에 보이도록 처리
+  const effectiveSort = currentTheme === "RECENT_NEW" ? "newest" : sortBy;
+
   filteredClips.sort((a, b) => {
-    if (sortBy === "popular") return (b.readCount || 0) - (a.readCount || 0);
-    if (sortBy === "newest") return String(b.createdDate || "").localeCompare(String(a.createdDate || ""));
-    if (sortBy === "oldest") return String(a.createdDate || "").localeCompare(String(b.createdDate || ""));
-    if (sortBy === "shortest") return (a.duration || 0) - (b.duration || 0);
+    if (effectiveSort === "popular") {
+      const diff = (b.readCount || 0) - (a.readCount || 0);
+      if (diff !== 0) return diff;
+      return String(b.createdDate || "").localeCompare(String(a.createdDate || ""));
+    }
+    if (effectiveSort === "newest") return String(b.createdDate || "").localeCompare(String(a.createdDate || ""));
+    if (effectiveSort === "oldest") return String(a.createdDate || "").localeCompare(String(b.createdDate || ""));
+    if (effectiveSort === "shortest") return (a.duration || 0) - (b.duration || 0);
     return 0;
   });
 
@@ -479,6 +554,7 @@ function renderClipsGrid() {
           <div class="thumb-wrap">
             ${thumbHtml}
             <span class="thumb-rank-badge ${rankClass}">#${clip.popularRank}</span>
+            ${clip.isRecentNew ? `<span class="thumb-new-badge">NEW</span>` : ""}
             ${clip.adult ? `<span class="thumb-adult">19</span>` : ""}
             ${isPlaying ? `<span class="playing-indicator">▶ 재생 중</span>` : ""}
             <span class="thumb-duration">${formatDuration(clip.duration)}</span>
@@ -561,9 +637,9 @@ function init() {
     playClip(filteredClips[0].clipUID, false);
   }
 
-  // 페이지 진입 시 백그라운드 실시간 동기화 실행 + 5분마다 자동 갱신
+  // 페이지 진입 시 백그라운드 실시간 동기화 실행 + 3분마다 자동 갱신
   syncFromChzzkLive(false);
-  setInterval(() => syncFromChzzkLive(false), 5 * 60 * 1000);
+  setInterval(() => syncFromChzzkLive(false), 3 * 60 * 1000);
 
   // 수동 실시간 동기화 버튼
   document.getElementById("syncNowBtn").addEventListener("click", () => {
@@ -576,6 +652,9 @@ function init() {
       document.querySelectorAll("#themeTabs .theme-tab").forEach((t) => t.classList.remove("active"));
       tab.classList.add("active");
       currentTheme = tab.getAttribute("data-theme");
+      if (currentTheme === "RECENT_NEW") {
+        document.getElementById("sortSelect").value = "newest";
+      }
       applyFiltersAndRender(true);
     });
   });

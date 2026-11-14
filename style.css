@@ -489,6 +489,26 @@ a {
   font-size: 11px;
 }
 
+.count-pill.new-pill {
+  background: var(--accent-pink);
+  color: #fff;
+  font-weight: 800;
+}
+
+.thumb-new-badge {
+  position: absolute;
+  top: 8px;
+  left: 52px;
+  background: var(--accent-pink);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 900;
+  padding: 2px 6px;
+  border-radius: 4px;
+  letter-spacing: 0.4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
 .toolbar-row {
   display: flex;
   justify-content: space-between;
