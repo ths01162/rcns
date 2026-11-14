@@ -414,7 +414,7 @@ function renderHeaderAndTop5() {
 
   top5Container.querySelectorAll("[data-play-uid]").forEach((el) => {
     el.addEventListener("click", () => {
-      playClip(el.getAttribute("data-play-uid"), false);
+      playClip(el.getAttribute("data-play-uid"), false, true);
     });
   });
 }
@@ -434,18 +434,55 @@ function refreshCurrentPlayingInfo() {
   document.getElementById("currentDate").textContent = target.createdDate || "-";
 }
 
+// 성인인증 클립 전용 16:9 미니 플레이어 팝업 창 열기 (최상위 창이므로 네이버 로그인 쿠키 100% 연동)
+let adultPopupWin = null;
+function openAdultMiniPlayer(clipUID) {
+  if (!clipUID) return;
+  const w = 960;
+  const h = 560;
+  const left = Math.max(0, Math.round((window.screen.width - w) / 2));
+  const top = Math.max(0, Math.round((window.screen.height - h) / 2));
+  const url = `https://chzzk.naver.com/embed/clip/${encodeURIComponent(clipUID)}`;
+
+  adultPopupWin = window.open(
+    url,
+    "rcns_chzzk_adult_player",
+    `width=${w},height=${h},left=${left},top=${top},resizable=yes,scrollbars=no`
+  );
+  if (adultPopupWin) {
+    adultPopupWin.focus();
+  }
+}
+
 // 특정 클립을 시어터 플레이어에서 재생
-function playClip(clipUID, scrollToTop = true) {
+function playClip(clipUID, scrollToTop = true, fromUserClick = false) {
   const target = allClips.find((c) => c.clipUID === clipUID);
   if (!target) return;
 
   currentClipUID = target.clipUID;
 
   const iframe = document.getElementById("clipIframe");
-  iframe.src = `https://chzzk.naver.com/embed/clip/${encodeURIComponent(target.clipUID)}`;
+  const adultOverlay = document.getElementById("adultPlayerOverlay");
+  const clipPageUrl = `https://chzzk.naver.com/clips/${encodeURIComponent(target.clipUID)}`;
+
+  if (target.adult) {
+    // 외부 사이트 iframe 내부에서는 브라우저 제3자 쿠키 차단 정책으로 네이버 로그인 쿠키가 전달되지 않으므로 전용 오버레이 표시
+    iframe.src = "about:blank";
+    adultOverlay.classList.remove("hidden");
+    document.getElementById("adultOverlayTitle").textContent = target.clipTitle;
+    document.getElementById("openAdultTabLink").href = clipPageUrl;
+
+    const autoPopup = document.getElementById("autoPopupAdultToggle")?.checked;
+    if (fromUserClick && autoPopup) {
+      openAdultMiniPlayer(target.clipUID);
+    }
+  } else {
+    adultOverlay.classList.add("hidden");
+    iframe.src = `https://chzzk.naver.com/embed/clip/${encodeURIComponent(target.clipUID)}`;
+  }
 
   refreshCurrentPlayingInfo();
-  document.getElementById("openOriginalClipLink").href = `https://chzzk.naver.com/clips/${encodeURIComponent(target.clipUID)}`;
+  document.getElementById("openOriginalClipLink").href = clipPageUrl;
 
   updateBookmarkButtonState();
 
@@ -585,7 +622,7 @@ function renderClipsGrid() {
     card.addEventListener("click", (e) => {
       if (e.target.closest("[data-bookmark-uid]")) return;
       const uid = card.getAttribute("data-uid");
-      playClip(uid, true);
+      playClip(uid, true, true);
     });
   });
 
@@ -675,14 +712,14 @@ function init() {
     if (!filteredClips.length) return;
     const idx = filteredClips.findIndex((c) => c.clipUID === currentClipUID);
     const prevIdx = idx > 0 ? idx - 1 : filteredClips.length - 1;
-    playClip(filteredClips[prevIdx].clipUID, false);
+    playClip(filteredClips[prevIdx].clipUID, false, true);
   });
 
   document.getElementById("nextClipBtn").addEventListener("click", () => {
     if (!filteredClips.length) return;
     const idx = filteredClips.findIndex((c) => c.clipUID === currentClipUID);
     const nextIdx = idx >= 0 && idx < filteredClips.length - 1 ? idx + 1 : 0;
-    playClip(filteredClips[nextIdx].clipUID, false);
+    playClip(filteredClips[nextIdx].clipUID, false, true);
   });
 
   // 랜덤 고로시 클립 뽑기
@@ -690,7 +727,12 @@ function init() {
     const pool = filteredClips.length > 0 ? filteredClips : allClips;
     if (!pool.length) return;
     const pick = pool[Math.floor(Math.random() * pool.length)];
-    playClip(pick.clipUID, true);
+    playClip(pick.clipUID, true, true);
+  });
+
+  // 성인인증 클립 전용 미니 플레이어 창 열기 버튼
+  document.getElementById("openAdultPopupBtn").addEventListener("click", () => {
+    openAdultMiniPlayer(currentClipUID);
   });
 
   // 상단 플레이어 찜하기 버튼

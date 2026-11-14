@@ -70,6 +70,35 @@
           allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
           allowfullscreen
         ></iframe>
+
+        <!-- 성인인증(19금) 클립 안내 및 전용 팝업 플레이어 오버레이 -->
+        <div id="adultPlayerOverlay" class="adult-player-overlay hidden">
+          <div class="adult-overlay-card">
+            <span class="adult-badge-lg">🔞 연령제한(성인인증) 클립</span>
+            <h3 id="adultOverlayTitle">클립 제목</h3>
+            <p class="adult-overlay-desc">
+              브라우저 보안 정책(제3자 쿠키 차단)으로 인해 외부 사이트 내장 화면(iframe)에서는
+              <strong>네이버 로그인 상태여도 미로그인으로 인식</strong>됩니다.<br />
+              아래 버튼을 누르면 <strong>네이버 로그인·성인인증이 그대로 유지되는 전용 미니 플레이어 창</strong>에서 즉시 재생됩니다!
+            </p>
+            <div class="adult-overlay-actions">
+              <button type="button" id="openAdultPopupBtn" class="btn-accent btn-lg">
+                ▶ 전용 미니 플레이어 창으로 즉시 재생
+              </button>
+              <a
+                id="openAdultTabLink"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-outline"
+              >🔗 치지직 새 탭에서 열기 ↗</a>
+            </div>
+            <label class="adult-auto-popup-label">
+              <input type="checkbox" id="autoPopupAdultToggle" checked />
+              <span>다음부터 🔞 성인 클립 카드 클릭 시 미니 플레이어 창 바로 띄우기</span>
+            </label>
+          </div>
+        </div>
       </div>
 
       <div class="player-info-panel">
